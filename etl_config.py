@@ -1,7 +1,7 @@
 from EtlStub import Etl
 
 pusheen_etls = ["treatment", "specimen"]
-hellokitty_etls = ["genomics", "new"]
+hellokitty_etls = ["genomics"]
 
 treatment_etl = Etl(
     'etl_files/treatment_test_data.csv',
@@ -36,18 +36,7 @@ specimen_etl = Etl(
     "specimen"
 )
 
-new_etl = Etl(
-    'etl_files/specimen_test_data.csv',
-    'etl.specimen_interface',
-    'etl.f_specimen_match',
-    'etl.f_specimen_validate',
-    'etl.f_specimen_dispose',
-    'etl.f_specimen_apply',
-    ['typeid', 'ownerid', 'accept'],
-    "new"
-)
-
-etl_objects = [treatment_etl, genomics_etl, specimen_etl, new_etl]
+etl_objects = [treatment_etl, genomics_etl, specimen_etl]
 
 # for obj in etl_object:
 #     obj.initialize(db)
